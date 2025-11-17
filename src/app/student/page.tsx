@@ -104,31 +104,30 @@ export default function StudentDashboard() {
       <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link 
-                href="/"
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                <ArrowLeft className="h-5 w-5" />
-                Back to Home
-              </Link>
-            </div>
-            <h1 className="text-2xl font-bold text-gray-800">My Growth Tree</h1>
-            <div className="w-24"></div> {/* Spacer for centering */}
+            <Link 
+              href="/"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="hidden sm:inline">Back to Home</span>
+              <span className="sm:hidden">Back</span>
+            </Link>
+            <h1 className="text-lg sm:text-2xl font-bold text-gray-800 text-center flex-1 mx-4">My Growth Tree</h1>
+            <div className="w-16 sm:w-24"></div> {/* Spacer for centering */}
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-2 gap-8">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Tree Visualization */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-xl shadow-lg p-6"
+            className="bg-white rounded-xl shadow-lg p-4 sm:p-6"
           >
-            <h2 className="text-xl font-semibold mb-4 text-gray-800">Your Growth Tree</h2>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Your Growth Tree</h2>
             <TreeVisualization 
               completedTasks={completedTasks.length}
               totalTasks={tasks.length}
@@ -137,7 +136,7 @@ export default function StudentDashboard() {
           </motion.div>
 
           {/* Tasks and Progress */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Progress Stats */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}

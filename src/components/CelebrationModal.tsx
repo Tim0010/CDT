@@ -46,20 +46,20 @@ export function CelebrationModal({ isOpen, onClose, task }: CelebrationModalProp
 
           {/* Modal */}
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden"
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {/* Header with confetti effect */}
-              <div className="relative bg-gradient-to-r from-green-400 to-blue-500 p-6 text-white overflow-hidden">
+              <div className="relative bg-gradient-to-r from-green-400 to-blue-500 p-4 sm:p-6 text-white overflow-hidden">
                 {/* Floating confetti */}
                 {Array.from({ length: 12 }).map((_, i) => (
                   <motion.div

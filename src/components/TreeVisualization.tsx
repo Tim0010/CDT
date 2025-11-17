@@ -63,7 +63,7 @@ export function TreeVisualization({ completedTasks, totalTasks, tasks }: TreeVis
   };
 
   return (
-    <div className="relative w-full h-96 bg-gradient-to-b from-sky-100 to-green-100 rounded-lg overflow-hidden">
+    <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-sky-100 to-green-100 rounded-lg overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         {/* Floating particles */}
@@ -171,11 +171,11 @@ export function TreeVisualization({ completedTasks, totalTasks, tasks }: TreeVis
       )}
 
       {/* Progress indicator */}
-      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm">
-        <div className="text-sm font-medium text-gray-700">
+      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 shadow-sm">
+        <div className="text-xs sm:text-sm font-medium text-gray-700">
           {completedTasks} / {totalTasks} tasks
         </div>
-        <div className="w-20 h-2 bg-gray-200 rounded-full mt-1">
+        <div className="w-16 sm:w-20 h-2 bg-gray-200 rounded-full mt-1">
           <motion.div
             className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full"
             initial={{ width: 0 }}
@@ -189,7 +189,7 @@ export function TreeVisualization({ completedTasks, totalTasks, tasks }: TreeVis
       <AnimatePresence>
         {selectedLeaf && (
           <motion.div
-            className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-xs z-10"
+            className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-xs z-10"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

@@ -137,44 +137,48 @@ export default function TeacherDashboard() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link 
-                href="/"
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
-              >
-                <ArrowLeft className="h-5 w-5" />
-                Back to Home
-              </Link>
-            </div>
-            <h1 className="text-2xl font-bold text-gray-800">Teacher Dashboard</h1>
+          <div className="flex items-center justify-between gap-2">
+            <Link 
+              href="/"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="hidden sm:inline">Back to Home</span>
+              <span className="sm:hidden">Back</span>
+            </Link>
+            <h1 className="text-lg sm:text-2xl font-bold text-gray-800 text-center flex-1 mx-2">Teacher Dashboard</h1>
             <button
               onClick={() => setShowChallengeForm(true)}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2"
+              className="bg-green-600 hover:bg-green-700 text-white px-3 sm:px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 text-sm sm:text-base"
             >
               <Plus className="h-4 w-4" />
-              Plant Challenge
+              <span className="hidden sm:inline">Plant Challenge</span>
+              <span className="sm:hidden">Add</span>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* Tab Navigation */}
-        <div className="mb-8">
-          <div className="flex space-x-1 bg-white p-1 rounded-lg shadow-sm">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1 bg-white p-1 rounded-lg shadow-sm">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all ${
+                className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 rounded-md font-medium transition-all text-sm sm:text-base ${
                   activeTab === tab.id
                     ? "bg-blue-600 text-white shadow-sm"
                     : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
                 }`}
               >
                 {tab.icon}
-                {tab.label}
+                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="sm:hidden">
+                  {tab.id === "overview" ? "Students" : 
+                   tab.id === "challenges" ? "Tasks" : "Stats"}
+                </span>
               </button>
             ))}
           </div>

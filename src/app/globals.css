@@ -157,4 +157,46 @@
   .content-spacing > * + * {
     margin-top: 1.5rem;
   }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .mobile-scroll {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .mobile-tap {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-text {
+      -webkit-text-size-adjust: 100%;
+    }
+  }
+  
+  /* Touch-friendly buttons */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Responsive grid improvements */
+  .responsive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 640px) {
+    .responsive-grid {
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid {
+      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
